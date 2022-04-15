@@ -24,12 +24,6 @@ export const textsSlice = createSlice({
         isCopied: false,
     },
     reducers: {
-        // toggleCards: (state, action) => {
-        //     // Card Flipper
-        //     const { id } = action.payload;
-        //     const card = state.items.find((element) => element.id === id);
-        //     card.isOpen = !card.isOpen;
-        // },
         copyAllParagraphs: (state, action) => {
             const isCopied = action.payload;
             state.isCopied = isCopied;
@@ -37,18 +31,16 @@ export const textsSlice = createSlice({
         },
         addHtmlIntoParagraphs: (state, action) => {
             const isHtmlIncluded = action.payload;
-
             if (isHtmlIncluded) {
                 state.items = state.items.map((element) => {
-                    element[0] = `</p>${element[0]}`
+                    element[0] = `<p>${element[0]}`
                     element[element.length - 1] = `${element[element.length - 1]}</p>`
                     return element
                 })
             } else {
                 state.items = state.items.map((element) => {
-                    element = element[0].substring(3, element.length - 1);
-                    element = element[element.length - 1].substring(1, element.length - 5);
-                    // element.shift('<p>')
+                    element[0] = element[0].substring(3, element.length - 1);
+                    element[element.length - 1] = element[element.length - 1].substring(0, element[element.length - 1].length - 4);
                     return element
                 })
             }
