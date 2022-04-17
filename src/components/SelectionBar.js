@@ -28,15 +28,15 @@ function SelectionBar() {
         <Col md={{ span: 11, offset: 1 }} className='justify-content-center d-flex'  >
 
             <ButtonToolbar className="mb-3 ">
-                <InputGroup className='me-2 w-25'>
+                <InputGroup className='mx-auto w-25 ms-md-0 me-md-2'>
                     <FormControl
                         type="number"
                         className='text-center'
                         value={numberOfParagraphs}
                         onChange={handleParagraphsNumber} />
                 </InputGroup>
-                <ButtonGroup className="" aria-label="First group">
-                    <DropdownButton as={ButtonGroup} title="Include Html" id="bg-nested-dropdown" variant='primary'>
+                <ButtonGroup className="mt-2 mt-md-0" aria-label="First group">
+                    <DropdownButton as={ButtonGroup} title="Include Html" id="bg-nested-dropdown" variant='primary' className=' ms-4 ms-md-0'>
                         {
                             isHtmlIncluded &&
                             <>

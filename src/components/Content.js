@@ -24,7 +24,7 @@ function Content() {
                 </Toast>
             </ToastContainer>
 
-            <Col md={{ span: 10, offset: 1 }} className='accordion'>
+            <Col xs={{ span: 12, offset: 0 }} md={{ span: 10, offset: 1 }} className='accordion '>
                 {
                     limitedNumberOfParagraphs[0] && limitedNumberOfParagraphs.map((objectCity, index) => (
                         <Accordion alwaysOpen key={index}>
